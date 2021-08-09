@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KyZXEAg3QhqLMpG8r+8fhAXLRk2vvoC2f3B09zVXn8CA5QIVfZOJ3BCsw2P0p/We" crossorigin="anonymous">
+    <title>Relógio</title>
+</head>
+<body>
+    <div class = "" id = "main">
+            <video id= "video" autoplay muted loop>
+                <source src="assets/bk/estrelas.mp4" type="video/mp4">
+                <source src="assets/bk/sol.mp4" type="video/mp4">
+              </video>   
+        <div class="pcart" id="grupo_card">
+            <div class = "card-group">
+                
+                <div class="cartoes text-center col" style="width: 20rem; height: 10rem;">
+                    <div class="card-body">
+                    <p class="card-title">Horas</p>
+                    <h2 id = "Hora"class="card-text"></h2>
+                    </div>
+                 </div>
+                <div class="cartoes text-center " style="width: 20rem; height: 10rem;">
+                    <div class="card-body">
+                    <p class="card-title">Minutos</p>
+                    <h2 id = "Minutos"class="card-text"></h2>
+                    </div>
+                </div>
+                <div class="cartoes text-center " style="width: 20rem; height: 10rem;">
+                    <div class="card-body">
+                    <p class="card-title">Segundos</p>
+                    <h2 id = "Segundos"class="card-text"></h2>
+                    </div>
+                </div>
+                </div>
+        </div>
+    </div>
+    <script>
+        function Hora(){
+        var data = new Date();
+        var horas = data.getHours();
+        var minutos = data.getMinutes();
+        var segundos = data.getSeconds();
+        var diaSemana = data.getUTCDay();
+        var tempoH = horas;
+        var mostrartempoH = document.getElementById('Hora');
+        mostrartempoH.innerHTML = tempoH;
+        var tempoM = minutos;
+        var mostrartempoM = window.document.getElementById('Minutos');
+        mostrartempoM.innerHTML = tempoM;
+        var tempoS = segundos;
+        var mostrartempoS = window.document.getElementById('Segundos');
+        mostrartempoS.innerHTML = tempoS;
+        var tempoDia = diaSemana;
+        var mostrartempoDia = window.document.getElementById('diaSemana');
+        mostrartempoDia.innerHTML = tempoDia;
+    }
+    setInterval(Hora,500);
+        var videoDia = document.getElementById('video').src='assets/bk/sol.mp4'; 
+        videoDia = 'true';
+        
+    </script>
+    <script>
+        function changeVideo($a) {
+               
+            return false;
+}
+    </script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-U1DAWAznBHeqEIlVSCgzq+c9gqGAJn5c/t99JyeKa9xxaYpSvHU5awsuZVVFIhvj" crossorigin="anonymous"></script>
+</body>
+</html>
