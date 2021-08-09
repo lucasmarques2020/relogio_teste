@@ -59,12 +59,15 @@
         mostrartempoDia.innerHTML = tempoDia;
     }
     setInterval(Hora,500);
+        function Noite(){
+            var videoDia = document.getElementById('video').src='assets/bk/estrelas.mp4'; 
+        } 
         function Dia(){
-            var videoDia = document.getElementById('video').src='assets/bk/sol.mp4'; 
+        var videoDia = document.getElementById('video').src='assets/bk/sol.mp4'; 
         }
-        
-        var cancelara = setInterval(Dia,2000);
-        clearInterval(cancelara);
+        var videoDia = document.getElementById('video').src='assets/bk/sol.mp4'; 
+       
+
     </script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-U1DAWAznBHeqEIlVSCgzq+c9gqGAJn5c/t99JyeKa9xxaYpSvHU5awsuZVVFIhvj" crossorigin="anonymous"></script>
 </body>
