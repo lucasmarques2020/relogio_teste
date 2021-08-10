@@ -6,13 +6,14 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style.css">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KyZXEAg3QhqLMpG8r+8fhAXLRk2vvoC2f3B09zVXn8CA5QIVfZOJ3BCsw2P0p/We" crossorigin="anonymous">
+    <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+<script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
     <title>Relógio</title>
 </head>
 <body>
     <div class = "container-fluid" id = "main">
         <div class="text-center" id = "Dia" >
             <div class="col" style="width: 20rem; height: 10rem;">
-                Dia Semana
             </div>
                 
         </div>
@@ -21,20 +22,20 @@
                 <source src="assets/bk/sol.mp4" type="video/mp4">
               </video>   
         <div class="pcart row" id="grupo_card">
-            <div class = "card-group col-12">
-                <div class="cartoes text-center col-4" style="width: 20rem; height: 10rem;">
+            <div class = "card-group">
+                <div class="cartoes text-center" style="width: 20rem; height: 10rem;">
                     <div class="card-body">
                     <p class="card-title">Horas</p>
                     <h2 id = "Hora"class="card-text"></h2>
                     </div>
                  </div>
-                <div class="cartoes text-center col-4" style="width: 20rem; height: 10rem;">
+                <div class="cartoes text-center" style="width: 20rem; height: 10rem;">
                     <div class="card-body">
                     <p class="card-title">Minutos</p>
                     <h2 id = "Minutos"class="card-text"></h2>
                     </div>
                 </div>
-                <div class="cartoes text-center col-4" style="width: 20rem; height: 10rem;">
+                <div class="cartoes text-center" style="width: 20rem; height: 10rem;">
                     <div class="card-body">
                     <p class="card-title">Segundos</p>
                     <h2 id = "Segundos"class="card-text"></h2>
@@ -44,6 +45,9 @@
                 </div>
             
         </div>  
+        <div class="botao" onclick=passar()>
+            <ion-icon class = "bt" name="arrow-forward-outline"></ion-icon>
+        </div>
     </div>
    
     <script>
@@ -103,8 +107,16 @@
             }
         }
             diaSemana();
-        
- 
+            var dia = true;
+        function passar(){
+            if(dia){
+                var videoDia = document.getElementById('video').src='assets/bk/estrelas.mp4'; 
+                dia = false;
+            }else{
+                var videoDia = document.getElementById('video').src='assets/bk/sol.mp4'; 
+                dia = true;
+            }
+        }
     </script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-U1DAWAznBHeqEIlVSCgzq+c9gqGAJn5c/t99JyeKa9xxaYpSvHU5awsuZVVFIhvj" crossorigin="anonymous"></script>
 </body>
