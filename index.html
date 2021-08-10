@@ -9,42 +9,47 @@
     <title>Relógio</title>
 </head>
 <body>
-    <div class = "" id = "main">
+    <div class = "container-fluid" id = "main">
             <video id= "video" autoplay muted loop>
                 <source src="assets/bk/estrelas.mp4" type="video/mp4">
                 <source src="assets/bk/sol.mp4" type="video/mp4">
               </video>   
-        <div class="pcart" id="grupo_card">
+        <div class="pcart row" id="grupo_card">
+            
             <div class = "card-group">
-                
                 <div class="cartoes text-center col" style="width: 20rem; height: 10rem;">
                     <div class="card-body">
                     <p class="card-title">Horas</p>
                     <h2 id = "Hora"class="card-text"></h2>
                     </div>
                  </div>
-                <div class="cartoes text-center " style="width: 20rem; height: 10rem;">
+                <div class="cartoes text-center col" style="width: 20rem; height: 10rem;">
                     <div class="card-body">
                     <p class="card-title">Minutos</p>
                     <h2 id = "Minutos"class="card-text"></h2>
                     </div>
                 </div>
-                <div class="cartoes text-center " style="width: 20rem; height: 10rem;">
+                <div class="cartoes text-center col" style="width: 20rem; height: 10rem;">
                     <div class="card-body">
                     <p class="card-title">Segundos</p>
                     <h2 id = "Segundos"class="card-text"></h2>
                     </div>
+                    
                 </div>
+                
                 </div>
-        </div>
+                <div class=" text-center" id = "Dia">
+                    Dia Semana
+                  </div>
+        </div>  
     </div>
+   
     <script>
         function Hora(){
         var data = new Date();
         var horas = data.getHours();
         var minutos = data.getMinutes();
         var segundos = data.getSeconds();
-        var diaSemana = data.getUTCDay();
         var tempoH = horas;
         var mostrartempoH = document.getElementById('Hora');
         mostrartempoH.innerHTML = tempoH;
@@ -65,6 +70,38 @@
             }
         } 
         Noite();
+        function diaSemana(){
+            var data = new Date();
+            var diaSemana = data.getUTCDay();
+            var mostrartempoDia = window.document.getElementById('Dia');
+        
+            console.log(diaSemana);
+            switch (diaSemana){
+                case 0: 
+                mostrartempoDia.innerHTML = "Domingo"; 
+                break;
+                case 1: 
+                mostrartempoDia.innerHTML = "Segunda-Feira"; 
+                break;
+                case 2: 
+                mostrartempoDia.innerHTML = "Terça-Feira"; 
+                break;
+                case 3: 
+                mostrartempoDia.innerHTML = "Quarta-Feira"; 
+                break;
+                case 4: 
+                mostrartempoDia.innerHTML = "Quinta-Feira"; 
+                break;
+                case 5: 
+                mostrartempoDia.innerHTML = "Sexta-Feira"; 
+                break;
+                case 6: 
+                mostrartempoDia.innerHTML = "Sábado"; 
+                break;
+            }
+        }
+            diaSemana();
+        
  
     </script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-U1DAWAznBHeqEIlVSCgzq+c9gqGAJn5c/t99JyeKa9xxaYpSvHU5awsuZVVFIhvj" crossorigin="anonymous"></script>
