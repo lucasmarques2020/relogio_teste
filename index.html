@@ -54,20 +54,18 @@
         var tempoS = segundos;
         var mostrartempoS = window.document.getElementById('Segundos');
         mostrartempoS.innerHTML = tempoS;
-        var tempoDia = diaSemana;
-        var mostrartempoDia = window.document.getElementById('diaSemana');
-        mostrartempoDia.innerHTML = tempoDia;
     }
     setInterval(Hora,500);
         function Noite(){
-            var videoDia = document.getElementById('video').src='assets/bk/estrelas.mp4'; 
+            var data = new Date();
+            var horas = data.getHours();
+            console.log(horas);
+            if(horas >= 6 && horas <= 18){
+               var videoDia = document.getElementById('video').src='assets/bk/sol.mp4'; 
+            }
         } 
-        function Dia(){
-        var videoDia = document.getElementById('video').src='assets/bk/sol.mp4'; 
-        }
-        
-       
-
+        Noite();
+ 
     </script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-U1DAWAznBHeqEIlVSCgzq+c9gqGAJn5c/t99JyeKa9xxaYpSvHU5awsuZVVFIhvj" crossorigin="anonymous"></script>
 </body>
