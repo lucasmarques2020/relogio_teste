@@ -18,8 +18,8 @@
                 
         </div>
             <video id= "video" autoplay muted loop>
-                <source src="assets/bk/estrelas.mp4" type="video/mp4">
-                <source src="assets/bk/sol.mp4" type="video/mp4">
+                <source src="assets/bk/halloween-day.mp4" type="video/mp4">
+                <source src="assets/bk/halloween-nigth.mp4" type="video/mp4">
               </video>   
         <div class="pcart row" id="grupo_card">
             <div class = "card-group">
@@ -72,7 +72,7 @@
             var horas = data.getHours();
             console.log(horas);
             if(horas >= 6 && horas <= 17){
-               var videoDia = document.getElementById('video').src='assets/bk/sol.mp4'; 
+               var videoDia = document.getElementById('video').src='assets/bk/halloween-day.mp4'; 
             }
         } 
         Noite();
@@ -110,10 +110,10 @@
             var dia = true;
         function passar(){
             if(dia){
-                var videoDia = document.getElementById('video').src='assets/bk/estrelas.mp4'; 
+                var videoDia = document.getElementById('video').src='assets/bk/halloween-nigth.mp4'; 
                 dia = false;
             }else{
-                var videoDia = document.getElementById('video').src='assets/bk/sol.mp4'; 
+                var videoDia = document.getElementById('video').src='assets/bk/halloween-day.mp4'; 
                 dia = true;
             }
         }
